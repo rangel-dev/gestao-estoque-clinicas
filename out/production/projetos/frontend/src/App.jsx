@@ -5,8 +5,7 @@ import RoutesComponent from "./routes";
 const App = () => {
   return (
     <Router>
-
-            <RoutesComponent />
+      <RoutesComponent />
     </Router>
   );
 };
