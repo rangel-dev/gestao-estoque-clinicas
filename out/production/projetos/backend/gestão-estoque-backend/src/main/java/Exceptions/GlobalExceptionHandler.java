@@ -1,5 +1,6 @@
 package Exceptions;
 
+import lombok.Getter;
 import lombok.Setter;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -9,7 +10,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.HashMap;
 import java.util.Map;
 
-
+@Getter
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -21,5 +22,12 @@ public class GlobalExceptionHandler {
 
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
+
+        public static class DuplicateDataException extends RuntimeException {
+        public DuplicateDataException(String message) {
+            super(message);
+        }
+        }
+
     }
 
